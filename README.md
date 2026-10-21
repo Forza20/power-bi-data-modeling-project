@@ -89,4 +89,4 @@ To refresh the PBIP version, update the Excel path in the Power Query source to 
 
 ## Data source credit
 
-The Nightmare Data Model dataset and project scenario were created by [Baraa Khatib Salkini (Data with Baraa)](https://www.youtube.com/watch?v=0A2k62YEbfI). This repository contains my Power BI model built from that source material.
+The Nightmare Data Model dataset and project scenario were created by Baraa Khatib Salkini of [Data with Baraa](https://www.datawithbaraa.com/), and introduced in [this video](https://www.youtube.com/watch?v=0A2k62YEbfI). This repository contains my Power BI model built from that source material.
