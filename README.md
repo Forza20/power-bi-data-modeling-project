@@ -73,6 +73,20 @@ The biggest lesson for me is that a trustworthy Power BI report starts with a tr
 4. If a refresh cannot find the source workbook, update the Excel source path to your local copy of `dataset.xlsx`.
 5. To review security, check **Manage roles** and **View as** in Power BI Desktop. The presence of the `security` table alone does not prove that a role is active.
 
+## Source-controlled version (PBIP)
+
+The [`pbip/`](pbip/) folder holds the same project saved as a Power BI Project (PBIP). Instead of one binary file, the model and report are stored as readable text files, so changes can be reviewed line by line in Git:
+
+| Path | What it holds |
+| --- | --- |
+| [`pbip/project_datamodel.pbip`](pbip/project_datamodel.pbip) | Open this file in Power BI Desktop to load the project |
+| [`pbip/project_datamodel.SemanticModel/definition/tables/`](pbip/project_datamodel.SemanticModel/definition/tables/) | One TMDL file per table, with columns, measures and Power Query source |
+| [`pbip/project_datamodel.SemanticModel/definition/relationships.tmdl`](pbip/project_datamodel.SemanticModel/definition/relationships.tmdl) | All relationships between facts and dimensions |
+| [`pbip/project_datamodel.SemanticModel/definition/roles/`](pbip/project_datamodel.SemanticModel/definition/roles/) | The `Regional Access` role, which filters `dim_customer` by region using the `security` table and `USERPRINCIPALNAME()` |
+| [`pbip/project_datamodel.Report/`](pbip/project_datamodel.Report/) | The report pages and theme |
+
+To refresh the PBIP version, update the Excel path in the Power Query source to your local copy of `dataset.xlsx`.
+
 ## Data source credit
 
 The Nightmare Data Model dataset and project scenario were created by [Baraa Khatib Salkini (Data with Baraa)](https://www.youtube.com/watch?v=0A2k62YEbfI). This repository contains my Power BI model built from that source material.
